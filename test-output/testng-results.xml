@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-15T15:34:09 PDT" name="Default suite" finished-at="2024-03-15T15:35:08 PDT" duration-ms="58784">
+    <groups>
+    </groups>
+    <test started-at="2024-03-15T15:34:09 PDT" name="Default test" finished-at="2024-03-15T15:35:08 PDT" duration-ms="58784">
+      <class name="com.Tekarch.API.POJO.APIwithPOJO">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:09 PDT" name="setup" finished-at="2024-03-15T15:34:10 PDT" duration-ms="473" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="getdata()[pri:0, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:10 PDT" name="getdata" finished-at="2024-03-15T15:34:28 PDT" duration-ms="17979" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdata -->
+        <test-method signature="createdata()[pri:1, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:28 PDT" name="createdata" finished-at="2024-03-15T15:34:28 PDT" duration-ms="865" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createdata -->
+        <test-method signature="getdataaftercreate()[pri:2, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:28 PDT" name="getdataaftercreate" finished-at="2024-03-15T15:34:41 PDT" duration-ms="13089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdataaftercreate -->
+        <test-method signature="updatedata()[pri:3, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:41 PDT" name="updatedata" finished-at="2024-03-15T15:34:42 PDT" duration-ms="706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatedata -->
+        <test-method signature="getdataafterupdate()[pri:4, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:42 PDT" name="getdataafterupdate" finished-at="2024-03-15T15:34:54 PDT" duration-ms="11339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdataafterupdate -->
+        <test-method signature="deletedata()[pri:5, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:54 PDT" name="deletedata" finished-at="2024-03-15T15:34:54 PDT" duration-ms="668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletedata -->
+        <test-method signature="getdataafterdeletion()[pri:6, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:54 PDT" name="getdataafterdeletion" finished-at="2024-03-15T15:35:08 PDT" duration-ms="13588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getdataafterdeletion -->
+      </class> <!-- com.Tekarch.API.POJO.APIwithPOJO -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

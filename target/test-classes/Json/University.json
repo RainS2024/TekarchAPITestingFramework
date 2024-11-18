@@ -1,0 +1,87 @@
+[ 
+
+{   "name":"Xyz University", 
+
+    "username":"aa@m.com", 
+
+    "password":"12xyz", 
+
+    "contact":[12234,23345,34542,56345], 
+
+  "students": [ 
+
+    { 
+
+      "id": 112, 
+
+      "name": "aana", 
+
+      "marks":[20,25,22], 
+
+      "contact": ["1234","3456"], 
+
+      "adresss":[{"state":"nc","city":"abc"},{"state":"ca","city":"xyz"}] 
+
+    }, 
+
+     { 
+
+      "id": 115, 
+
+      "name": "banu", 
+
+      "marks":[20,25,22], 
+
+      "contact": ["4534","3458"], 
+
+      "adresss":[{"state":"nc","city":"abc"},{"state":"ca","city":"xyz"}] 
+
+    } 
+
+  ] 
+
+}, 
+
+{   "name":"ABC University", 
+
+    "username":"bb@gmail.com", 
+
+    "password":"12abc", 
+
+    "contact":[45672,73345,94542,36345], 
+
+  "students": [ 
+
+    { 
+
+      "id": 134, 
+
+      "name": "john", 
+
+      "marks":[18,25,24], 
+
+      "contact": ["1834","5456"], 
+
+      "adresss":[{"state":"al","city":"abc"},{"state":"al","city":"xyz"}] 
+
+    }, 
+
+     { 
+
+      "id": 156, 
+
+      "name": "april", 
+
+      "marks":[25,25,21], 
+
+      "contact": ["2534","9456"], 
+
+      "adresss":[{"state":"va","city":"abc"},{"state":"al","city":"xyz"},{"state":"al","city":"pqr"}] 
+
+    } 
+
+  ] 
+
+} 
+
+] 
