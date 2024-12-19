@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Tekarch.API.POJO.APIwithPOJO">
+      <class name="com.Tekarch.CRUD.ValidateLoginFunctionality">
         <methods>
-          <include name="setup"/>
-          <include name="getdataafterupdate"/>
+          <include name="beforeClass"/>
+          <include name="beforeSuite"/>
+          <include name="validateLoginWithSchema"/>
+          <include name="validateLoginWithInValidCredentials"/>
         </methods>
-      </class> <!-- com.Tekarch.API.POJO.APIwithPOJO -->
+      </class> <!-- com.Tekarch.CRUD.ValidateLoginFunctionality -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

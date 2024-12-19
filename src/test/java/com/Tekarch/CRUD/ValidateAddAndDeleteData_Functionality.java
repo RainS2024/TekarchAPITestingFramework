@@ -21,6 +21,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.List;
+
 @Listeners(com.Tekarch.listeners.TestEventListenersUtility.class)
 public class ValidateAddAndDeleteData_Functionality extends BaseTest {
 	ExtentReportsUtility report=ExtentReportsUtility.getInstance(); 
@@ -33,9 +34,22 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
     public void beforeClass() {
         faker = new Faker();
         apiHelper = new APIHelper();
-        Response login = apiHelper.login(EnvironmentDetails.getProperty("username"), EnvironmentDetails.getProperty("password"));
-        userid = login.getBody().as(new TypeRef<List<LoginResponsePOJO>>() {}).get(0).getUserid();
     }
+        
+ @Test(priority = -1, description = "validate login functionality with valid credentials")
+        public void validateLoginWithValidCredentials() {
+            Response login = apiHelper.login(EnvironmentDetails.getProperty("username"), EnvironmentDetails.getProperty("password"));
+            
+            Assert.assertEquals(login.getStatusCode(), HttpStatus.SC_CREATED,"error occured with login");
+            report.logTestInfo("successfull login with statuscode 201");
+            JsonSchemaValidate.validateSchemaInClassPath(login,"ExpectedJsonSchema/LoginResponse.json");
+            report.logTestInfo("LoginResponse is validated against expected schema successfully");
+            userid = login.getBody().as(new TypeRef<List<LoginResponsePOJO>>() {}).get(0).getUserid();
+        }
+       // Response login = apiHelper.login(EnvironmentDetails.getProperty("username"), EnvironmentDetails.getProperty("password"));
+       //
+        
+    
 
     @Test(priority = 0, description = "validate add data functionality")
     public void validateAddDataFunctionality() {
@@ -86,9 +100,9 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
         pincode = faker.address().zipCode();
     	UpdateDataRequestPOJO updateDataRequest = UpdateDataRequestPOJO.builder().accountno(accountno).departmentno(departmentno).salary(salary).pincode(pincode).userid(userid).id(dataId).build();
         Response response = apiHelper.putData(updateDataRequest);
-        report.logTestInfo("Account got updated -->" + updateDataRequest.getAccountno());
+       report.logTestInfo("Account got updated -->" + updateDataRequest.getAccountno());
         Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK, "Add data functionality is not working as expected.");
-        report.logTestInfo("Status Code" + response.getStatusLine());
+       report.logTestInfo("Status Code" + response.getStatusLine());
         Assert.assertEquals(response.as(EditDataResponsePOJO.class).getStatus(), TestDataUtils.getProperty("successStatusMessage"), "The value of status key is not as expected in response ");
         JsonSchemaValidate.validateSchema(response.asPrettyString(), "EditData.json");
 
@@ -144,7 +158,7 @@ public class ValidateAddAndDeleteData_Functionality extends BaseTest {
         report.logTestInfo("Status Code" + data.getStatusLine());
         if (returnTheMatchingGetDataResponse(accountno, userid, getDataResponseList) != null) {
             Assert.fail("Deleted data is still available in the get data response");
-            report.logTestFailed("Deleted data is still available in the get data response");
+           report.logTestFailed("Deleted data is still available in the get data response");
         }
     }
 

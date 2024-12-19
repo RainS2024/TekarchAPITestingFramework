@@ -1,45 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-15T15:34:09 PDT" name="Default suite" finished-at="2024-03-15T15:35:08 PDT" duration-ms="58784">
+  <suite started-at="2024-12-12T16:21:36 PST" name="Default suite" finished-at="2024-12-12T16:21:40 PST" duration-ms="3399">
     <groups>
     </groups>
-    <test started-at="2024-03-15T15:34:09 PDT" name="Default test" finished-at="2024-03-15T15:35:08 PDT" duration-ms="58784">
-      <class name="com.Tekarch.API.POJO.APIwithPOJO">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:09 PDT" name="setup" finished-at="2024-03-15T15:34:10 PDT" duration-ms="473" status="PASS">
+    <test started-at="2024-12-12T16:21:36 PST" name="Default test" finished-at="2024-12-12T16:21:40 PST" duration-ms="3399">
+      <class name="com.Tekarch.CRUD.ValidateLoginFunctionality">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.Tekarch.CRUD.ValidateLoginFunctionality@647e447]" started-at="2024-12-12T16:21:36 PST" name="beforeSuite" finished-at="2024-12-12T16:21:36 PST" duration-ms="314" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="getdata()[pri:0, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:10 PDT" name="getdata" finished-at="2024-03-15T15:34:28 PDT" duration-ms="17979" status="PASS">
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.Tekarch.CRUD.ValidateLoginFunctionality@647e447]" started-at="2024-12-12T16:21:36 PST" name="beforeClass" finished-at="2024-12-12T16:21:37 PST" duration-ms="534" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getdata -->
-        <test-method signature="createdata()[pri:1, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:28 PDT" name="createdata" finished-at="2024-03-15T15:34:28 PDT" duration-ms="865" status="PASS">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="validateLoginWithValidCredentials()[pri:0, instance:com.Tekarch.CRUD.ValidateLoginFunctionality@647e447]" started-at="2024-12-12T16:21:37 PST" name="validateLoginWithValidCredentials" description="validate login functionality with valid credentials" finished-at="2024-12-12T16:21:39 PST" duration-ms="2129" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createdata -->
-        <test-method signature="getdataaftercreate()[pri:2, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:28 PDT" name="getdataaftercreate" finished-at="2024-03-15T15:34:41 PDT" duration-ms="13089" status="PASS">
+        </test-method> <!-- validateLoginWithValidCredentials -->
+        <test-method signature="validateLoginWithInValidCredentials()[pri:1, instance:com.Tekarch.CRUD.ValidateLoginFunctionality@647e447]" started-at="2024-12-12T16:21:39 PST" name="validateLoginWithInValidCredentials" description="validate login functionality with invalid credentials" finished-at="2024-12-12T16:21:39 PST" duration-ms="361" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (object) does not match any allowed primitive type (allowed: ["array"])
+    level: "error"
+    schema: {"loadingURI":"file:/Users/niwas/Desktop/Java%20Folder/APITestingFramework/target/test-classes/ExpectedJsonSchema/LoginResponse.json#","pointer":""}
+    instance: {"pointer":""}
+    domain: "validation"
+    keyword: "type"
+    found: "object"
+    expected: ["array"]
+
+  Actual: {"status":"username and password is incorrect"}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (object) does not match any allowed primitive type (allowed: ["array"])
+    level: "error"
+    schema: {"loadingURI":"file:/Users/niwas/Desktop/Java%20Folder/APITestingFramework/target/test-classes/ExpectedJsonSchema/LoginResponse.json#","pointer":""}
+    instance: {"pointer":""}
+    domain: "validation"
+    keyword: "type"
+    found: "object"
+    expected: ["array"]
+
+  Actual: {"status":"username and password is incorrect"}
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+at com.Tekarch.utils.JsonSchemaValidate.validateSchemaInClassPath(JsonSchemaValidate.java:35)
+at com.Tekarch.CRUD.ValidateLoginFunctionality.validateLoginWithInValidCredentials(ValidateLoginFunctionality.java:59)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getdataaftercreate -->
-        <test-method signature="updatedata()[pri:3, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:41 PDT" name="updatedata" finished-at="2024-03-15T15:34:42 PDT" duration-ms="706" status="PASS">
+        </test-method> <!-- validateLoginWithInValidCredentials -->
+        <test-method signature="validateLoginWithSchema()[pri:2, instance:com.Tekarch.CRUD.ValidateLoginFunctionality@647e447]" started-at="2024-12-12T16:21:39 PST" name="validateLoginWithSchema" description="validate login functionality with changed schema" finished-at="2024-12-12T16:21:40 PST" duration-ms="313" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (string) does not match any allowed primitive type (allowed: ["integer"])
+    level: "error"
+    schema: {"loadingURI":"file:/Users/niwas/Desktop/Java%20Folder/APITestingFramework/target/test-classes/ExpectedJsonSchema/LoginResponseNegSchema.json#","pointer":"/items/0/properties/token"}
+    instance: {"pointer":"/0/token"}
+    domain: "validation"
+    keyword: "type"
+    found: "string"
+    expected: ["integer"]
+
+  Actual: [{"token":"M6AU2jUhfUphHVRN473c5umHNeCdnyX5MbNPlDKqpWGke0VXETwNAJrqC4pEivorinQe5xLHDChKEsljsIUlQjwE03qR89x3S841","userid":"EOWJF7rsDqInuTrwPre4"}]
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Response body doesn't match expectation.
+Expected: The content to match the given JSON schema.
+error: instance type (string) does not match any allowed primitive type (allowed: ["integer"])
+    level: "error"
+    schema: {"loadingURI":"file:/Users/niwas/Desktop/Java%20Folder/APITestingFramework/target/test-classes/ExpectedJsonSchema/LoginResponseNegSchema.json#","pointer":"/items/0/properties/token"}
+    instance: {"pointer":"/0/token"}
+    domain: "validation"
+    keyword: "type"
+    found: "string"
+    expected: ["integer"]
+
+  Actual: [{"token":"M6AU2jUhfUphHVRN473c5umHNeCdnyX5MbNPlDKqpWGke0VXETwNAJrqC4pEivorinQe5xLHDChKEsljsIUlQjwE03qR89x3S841","userid":"EOWJF7rsDqInuTrwPre4"}]
+
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+at com.Tekarch.utils.JsonSchemaValidate.validateSchemaInClassPath(JsonSchemaValidate.java:35)
+at com.Tekarch.CRUD.ValidateLoginFunctionality.validateLoginWithSchema(ValidateLoginFunctionality.java:69)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updatedata -->
-        <test-method signature="getdataafterupdate()[pri:4, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:42 PDT" name="getdataafterupdate" finished-at="2024-03-15T15:34:54 PDT" duration-ms="11339" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getdataafterupdate -->
-        <test-method signature="deletedata()[pri:5, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:54 PDT" name="deletedata" finished-at="2024-03-15T15:34:54 PDT" duration-ms="668" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deletedata -->
-        <test-method signature="getdataafterdeletion()[pri:6, instance:com.Tekarch.API.POJO.APIwithPOJO@291ae]" started-at="2024-03-15T15:34:54 PDT" name="getdataafterdeletion" finished-at="2024-03-15T15:35:08 PDT" duration-ms="13588" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getdataafterdeletion -->
-      </class> <!-- com.Tekarch.API.POJO.APIwithPOJO -->
+        </test-method> <!-- validateLoginWithSchema -->
+      </class> <!-- com.Tekarch.CRUD.ValidateLoginFunctionality -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

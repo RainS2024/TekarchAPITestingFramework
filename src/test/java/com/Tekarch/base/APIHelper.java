@@ -35,7 +35,7 @@ public class APIHelper {
     public Response login(String username, String password) {
         LoginRequestPOJO loginRequest = LoginRequestPOJO.builder().username(username).password(password).build(); // payload 
     
-        reqSpec.headers(getHeaders(true));
+        reqSpec.headers(getHeaders(false));
         Response response = null;
         try {
             reqSpec.body(loginRequest); //Serializing loginrequest class to byte stream
@@ -55,14 +55,14 @@ public class APIHelper {
 
     public Response getData() {
         reqSpec = RestAssured.given();
-        reqSpec.headers(getHeaders(false));
+        reqSpec.headers(getHeaders(true));
         Response response = null;
         try {
             response = reqSpec.get("/getdata");
            // response.then().log().all();
         } catch (Exception e) {
             Assert.fail("Get data is failing due to :: " + e.getMessage());
-            report.logTestFailed("Get data is failing due to :: "+ e.getMessage());
+           // report.logTestFailed("Get data is failing due to :: "+ e.getMessage());
         }
         return response;
     }
@@ -72,7 +72,7 @@ public class APIHelper {
         Response response = null;
         try {
             log.info("Adding below data :: " + new ObjectMapper().writeValueAsString(CreateDataRequest));
-            reqSpec.headers(getHeaders(false));
+            reqSpec.headers(getHeaders(true));
             reqSpec.body(new ObjectMapper().writeValueAsString(CreateDataRequest)); //Serializing addData Request POJO classes to byte stream
             response = reqSpec.post("/addData");
             //response.then().log().all();
@@ -85,7 +85,7 @@ public class APIHelper {
 
     public Response putData(UpdateDataRequestPOJO updateDataRequest) {
         reqSpec = RestAssured.given();
-        reqSpec.headers(getHeaders(false));
+        reqSpec.headers(getHeaders(true));
         Response response = null;
         try {
             reqSpec.body(new ObjectMapper().writeValueAsString(updateDataRequest)); //Serializing addData Request POJO classes to byte stream
@@ -100,7 +100,7 @@ public class APIHelper {
 
     public Response deleteData(DeleteDataPOJO deleteDataRequest) {
         reqSpec = RestAssured.given();
-        reqSpec.headers(getHeaders(false));
+        reqSpec.headers(getHeaders(true));
         Response response = null;
         try {
             reqSpec.body(new ObjectMapper().writeValueAsString(deleteDataRequest)); //Serializing addData Request POJO classes to byte stream
@@ -108,15 +108,15 @@ public class APIHelper {
             //response.then().log().all();
         } catch (Exception e) {
             Assert.fail("Delete data functionality is failing due to :: " + e.getMessage());
-            report.logTestFailed("Delete data is failing due to :: "+ e.getMessage());
+           // report.logTestFailed("Delete data is failing due to :: "+ e.getMessage());
         }
         return response;
     }
 
-    public HashMap<String, String> getHeaders(boolean forLogin) {
+    public HashMap<String, String> getHeaders(boolean tokenRequired) {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
-        if (!forLogin) {
+        if (tokenRequired) {
             headers.put("token", token);
         }
         return headers;
